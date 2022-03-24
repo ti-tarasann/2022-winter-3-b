@@ -58,7 +58,6 @@ interface check {
 }
 
 
-
 const setList = (req: Request) => { //送られたデータをそのまま返す
     const params = parseSearchParams(new URL(req.url))
     const name = params.x.toString()
@@ -73,9 +72,6 @@ const getList = (req: Request) => {
 const setCheck = (req: Request) => {
 
 }
-
-
-
 
 
 // 従来の function を使った関数宣言
