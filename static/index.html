@@ -4,37 +4,52 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="styles.css" />
   </head>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
+
   <body>
-    <img class="title-img" src="img/jig_intern.png" />
-
-    <h1>API 接続テスト</h1>
-    <p>server.ts で定義した API にアクセスします</p>
-
-    <h2>/api/time</h2>
-    <button id="timeButton">現在の日時</button>
-
-    <h2>/api/asmd</h2>
-    <label for="xNumber">x</label>
-    <input id="xNumber" type="number" value="10" />
-    <label for="yNumber">y</label>
-    <input id="yNumber" type="number" value="5" />
-    <button id="asmdButton">計算</button>
-    <p id="asmdResult"></p>
-
-    <h2>/api/reverse</h2>
-    <input
-      id="reverseInput"
-      type="text"
-      placeholder="反転する文字列"
-      value="こんにちは"
-    />
-    <button id="reverseButton">反転</button>
-
-    <h2>/api/todo/</h2>
-    <input id="todoInput" type="text" placeholder="ToDo" />
-    <button id="todoAddButton">Add</button>
-    <ul id="todoList"></ul>
+    
+    <div>リスト追加</div>
+    <input type="text"  id="name" placeholder="やることの内容" class="m-form-text">
+    <button id="set_list" class="btn btn--color btn--cubic btn--shadow">リストに追加</button>
+    <p class="col-12"></p>
+    <p class="col-12"></p>
+    <p class="col-12"></p>
+    <div>家にいたときのやることリスト</div>
+    <table  id="stay_home_list" class="design03">
+        <thead>
+            <tr>
+                <td>やったかチェック</td>
+                <td>やることの内容</td>
+            </tr>
+            <tr>
+              <td>やったかチェック</td>
+              <td>やることの内容</td>
+          </tr>
+          <tr>
+            <td>やったかチェック</td>
+            <td>やることの内容</td>
+        </tr>
+        </thead>
+    </table>
 
     <script type="module" src="main.js"></script>
+    <p class="col-12"></p>
+    <p class="col-12"></p>
+    <button type="button" onclick="sendPushNotification()" class="btn btn--color btn--cubic btn--shadow" >通知テスト</button>
+    <script type="text/javascript">
+        function sendPushNotification() {
+            Push.create('テスト', {
+                body: 'テスト',
+                icon: 'index.jpg',
+                timeout: 5000,
+                onClick: function () {
+                    this.close();
+                    location.href = 'https://hogehoge.jp';
+                }
+            });
+        }
+    </script>
+
   </body>
 </html>
