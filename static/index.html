@@ -8,23 +8,35 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
 
   <body>
+    
     <div>リスト追加</div>
-    やることの内容:<input type="text"  id="name">
-    <button id="set_list">リストに追加</button>
-
+    <input type="text"  id="name" placeholder="やることの内容" class="m-form-text">
+    <button id="set_list" class="btn btn--color btn--cubic btn--shadow">リストに追加</button>
+    <p class="col-12"></p>
+    <p class="col-12"></p>
+    <p class="col-12"></p>
     <div>家にいたときのやることリスト</div>
-    <table border = "1" id="stay_home_list">
+    <table  id="stay_home_list" class="design03">
         <thead>
             <tr>
                 <td>やったかチェック</td>
                 <td>やることの内容</td>
             </tr>
+            <tr>
+              <td>やったかチェック</td>
+              <td>やることの内容</td>
+          </tr>
+          <tr>
+            <td>やったかチェック</td>
+            <td>やることの内容</td>
+        </tr>
         </thead>
     </table>
 
     <script type="module" src="main.js"></script>
-
-    <button type="button" onclick="sendPushNotification()">通知テスト</button>
+    <p class="col-12"></p>
+    <p class="col-12"></p>
+    <button type="button" onclick="sendPushNotification()" class="btn btn--color btn--cubic btn--shadow" >通知テスト</button>
     <script type="text/javascript">
         function sendPushNotification() {
             Push.create('テスト', {
